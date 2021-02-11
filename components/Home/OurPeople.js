@@ -34,7 +34,7 @@ const OurPeople = () => {
   return (
     <HomeSections title='Our Core People' outlineTitle='Our Core'>
       <motion.div
-        className='grid grid-cols-2 gap-24'
+        className='grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-24'
         variants={container}
         initial='hidden'
         animate='show'
@@ -45,7 +45,7 @@ const OurPeople = () => {
               <img
                 src={image}
                 alt=''
-                className='absolute object-cover min-w-full min-h-full -top-40'
+                className='absolute object-cover min-w-full min-h-full top-0 lg:-top-40'
               />
             </div>
             <h6 className='text-2xl font-medium'>{name}</h6>

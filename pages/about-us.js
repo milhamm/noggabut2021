@@ -4,15 +4,14 @@ import React from 'react';
 const AboutUsPage = () => {
   return (
     <Layout>
-      <div className='container mx-auto px-6 flex flex-wrap mb-32'>
-        <h1 className='flex-2 font-medium text-3xl'>About</h1>
-        <div className='flex-2 mb-24'>
-          We both are students at one of the universities in the Bandung area,
-          namely Telkom University, who is interested in the field of computer
-          science and likes challenges and competitions, which consists of 2
-          core players
+      <div className='container mx-auto px-6 flex flex-col lg:flex-row flex-wrap mb-24 lg:mb-32'>
+        <h1 className='flex-2 font-medium text-3xl mb-3'>About</h1>
+        <div className='flex-2 mb-12 lg:mb-24'>
+          We are both student from Telkom University, Bandung. We are interested
+          in the field of computer science and likes challenges and
+          competitions. We are a group of 2 people
         </div>
-        <h1 className='flex-2 font-medium text-3xl'>Achievement</h1>
+        <h1 className='flex-2 font-medium text-3xl mb-3'>Achievement</h1>
         <div className='flex-2'>
           <p>
             <strong>First Place</strong> DEVDAY Hackathon RPLGDC: Telkom

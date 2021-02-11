@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import { AnimateSharedLayout } from 'framer-motion';
 import '../styles/globals.css';
 
 function MyApp({ Component, pageProps }) {
@@ -22,7 +23,9 @@ function MyApp({ Component, pageProps }) {
           href='https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css'
         />
       </Head>
-      <Component {...pageProps} />
+      <AnimateSharedLayout>
+        <Component {...pageProps} />
+      </AnimateSharedLayout>
     </>
   );
 }

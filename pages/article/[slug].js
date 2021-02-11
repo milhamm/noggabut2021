@@ -8,26 +8,26 @@ const ArticlePage = () => {
     <Layout>
       <div className='container mx-auto px-6 mb-32'>
         <motion.div
-          className='relative w-full overflow-hidden h-96 mb-20 rounded'
-          initial={{ y: 10, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.7 }}
+          className='relative w-full overflow-hidden h-52 lg:h-96 mb-8 lg:mb-20 rounded'
+          // initial={{ opacity: 0 }}
+          // animate={{ opacity: 1 }}
+          layoutId='image-1'
         >
           <img
             src='/images/tes1.jpg'
             alt=''
-            className='absolute min-w-full min-h-full object-cover -top-1/2'
+            className='absolute min-w-full min-h-full object-cover lg:-top-1/2'
           />
         </motion.div>
         <article className='max-w-3xl mx-auto'>
-          <motion.h1
-            className='font-bold text-6xl mb-8'
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.7, delay: 0.5 }}
+          <motion.h4
+            className='font-bold text-3xl lg:text-6xl mb-8'
+            layoutId='title-1'
+            // initial={{ opacity: 0 }}
+            // animate={{ opacity: 1 }}
           >
             Proclub Experience
-          </motion.h1>
+          </motion.h4>
           <Label
             text='Backend'
             initial={{ y: 10, opacity: 0 }}
@@ -35,7 +35,7 @@ const ArticlePage = () => {
             transition={{ duration: 0.7, delay: 0.5 }}
           />
           <motion.div
-            className='main-article mt-16'
+            className='main-article mt-8 lg:mt-16'
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.7, delay: 1 }}

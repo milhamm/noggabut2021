@@ -10,15 +10,15 @@ export default function Home() {
       <Hero />
       <OurPeople />
       <HomeSections title='Our Works' outlineTitle='Our Works'>
-        <div className='w-full bg-blue-500 flex pt-12 px-24 rounded text-white'>
-          <div className='flex-1 relative'>
+        <div className='w-full bg-blue-500 flex flex-col lg:flex-row px-6 pt-10 lg:pt-12 lg:px-24 rounded text-white'>
+          <div className='flex-1 relative h-64 lg:h-auto'>
             <img
               src='/images/works/tescov/tescov.png'
               alt=''
-              className='w-64 h-64 bottom-0 absolute'
+              className='w-52 h-52 lg:w-64 lg:h-64 -top-16 bottom-none lg:top-auto lg:bottom-0 absolute'
             />
           </div>
-          <div className='flex-1'>
+          <div className='flex-1 mt-48 lg:mt-0'>
             <div className='italic text-lg'>Testcov.id</div>
             <h5 className='font-bold text-2xl mt-3'>
               Application to help find test spots and order
@@ -28,7 +28,7 @@ export default function Home() {
               and get 1st place in the hackathon competition Devday RPLGDC
               Telkom University
             </p>
-            <div className='grid grid-cols-2 mt-6 mb-12'>
+            <div className='grid grid-cols-2 mt-6 mb-12 gap-1'>
               <div>
                 <div className='text-sm'>Scope: Hackathon, Health</div>
               </div>
@@ -45,15 +45,17 @@ export default function Home() {
         </div>
       </HomeSections>
       <HomeSections title='New Releases' outlineTitle='New Releases'>
-        <div className='grid grid-cols-2 gap-24'>
+        <div className='grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-24'>
           <BlogItems
+            id='1-home'
             title='Designing Data Science Tools at Spotify'
             category='Backend'
             image='/images/tes1.jpg'
             author='Muhammad Avtara Khrisna'
           />
           <BlogItems
-            title='Designing Data Science Tools at Spotify'
+            id='2-home'
+            title='Proclub Experience'
             category='Backend'
             image='/images/tes1.jpg'
             author='Muhammad Avtara Khrisna'

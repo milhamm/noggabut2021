@@ -19,7 +19,7 @@ const listItem = {
 
 const Navbar = () => {
   return (
-    <div className='py-24 container px-6 mx-auto flex justify-between'>
+    <div className='py-8 lg:py-24 container px-6 mx-auto flex justify-between'>
       <Link href='/'>
         <a>
           <img
@@ -30,7 +30,7 @@ const Navbar = () => {
         </a>
       </Link>
       <motion.div
-        className='flex'
+        className='flex items-center'
         variants={container}
         initial='hidden'
         animate='show'
