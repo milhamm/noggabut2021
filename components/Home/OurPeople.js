@@ -48,8 +48,8 @@ const OurPeople = () => {
                 className='absolute object-cover min-w-full min-h-full top-0 lg:-top-40'
               />
             </div>
-            <h6 className='text-2xl font-medium'>{name}</h6>
-            <p className='text-lg'>{role}</p>
+            <h6 className='text-lg lg:text-2xl font-medium'>{name}</h6>
+            <p className='text-sm lg:text-lg'>{role}</p>
           </motion.div>
         ))}
       </motion.div>

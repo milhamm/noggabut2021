@@ -20,14 +20,14 @@ const BlogItems = ({ title, category, image, author, id }) => {
       <Link href='/article/designing-anu'>
         <a>
           <motion.h4
-            className='text-2xl font-medium mt-4 hover:underline cursor-pointer'
+            className='text-lg lg:text-2xl font-medium mt-4 hover:underline cursor-pointer'
             layoutId={`title-${id}`}
           >
             {title}
           </motion.h4>
         </a>
       </Link>
-      <p className='text-gray-500 text-lg'>{`By ${author}`}</p>
+      <p className='text-gray-500 text-sm lg:text-lg'>{`By ${author}`}</p>
     </div>
   );
 };

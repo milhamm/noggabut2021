@@ -1,9 +1,13 @@
 import Layout from 'components/Layout';
 import React from 'react';
 
+const meta = {
+  title: 'About Us',
+};
+
 const AboutUsPage = () => {
   return (
-    <Layout>
+    <Layout meta={meta}>
       <div className='container mx-auto px-6 flex flex-col lg:flex-row flex-wrap mb-24 lg:mb-32'>
         <h1 className='flex-2 font-medium text-3xl mb-3'>About</h1>
         <div className='flex-2 mb-12 lg:mb-24'>

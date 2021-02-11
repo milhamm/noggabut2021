@@ -1,8 +1,7 @@
-import React, { useRef, useEffect } from 'react';
-import Slider from 'react-slick';
-import Link from 'next/link';
+import React from 'react';
 import BlogItems from 'components/Blog/BlogItems';
 import { motion } from 'framer-motion';
+import CategorySlider from './CategorySlider';
 
 const container = {
   hidden: { opacity: 0 },
@@ -19,66 +18,12 @@ const listItem = {
   show: { opacity: 1, y: 0 },
 };
 
-const settings = {
-  centerMode: true,
-  slidesToShow: 3,
-  infinite: true,
-  focusOnSelect: true,
-  speed: 0,
-  swipe: false,
-  centerPadding: '128px',
-  arrows: false,
-  dots: false,
-  responsive: [
-    {
-      breakpoint: 1024,
-      settings: {
-        centerMode: true,
-        slidesToShow: 1,
-        infinite: true,
-        focusOnSelect: true,
-        speed: 0,
-        swipe: false,
-        centerPadding: '52px',
-        arrows: false,
-        dots: false,
-      },
-    },
-  ],
-};
-
-const categories = [
-  { title: 'All Stories', url: '' },
-  { title: 'Backend', url: 'backend' },
-  { title: 'Experiences', url: 'experiences' },
-  { title: 'Personal', url: 'personal' },
-];
-
-const StoriesSection = ({ category = '' }) => {
-  const initialSlide = categories.map((val) => val.url).indexOf(category);
-  const sliderRef = useRef();
-
-  useEffect(() => {
-    sliderRef.current.slickGoTo(initialSlide, true);
-  }, [category, sliderRef]);
-
+const Stories = ({ category = '' }) => {
   return (
     <div className='container mx-auto mb-32 px-6'>
       <div className='text-center font-bold text-3xl lg:text-5xl'>Stories</div>
       <div className='mt-8'>
-        <Slider {...settings} initialSlide={initialSlide} ref={sliderRef}>
-          {categories.map(({ title, url }) => (
-            <span className='focus: outline-none py-3' key={title}>
-              <Link href={`/stories/${url}`}>
-                <a>
-                  <h3 className='font-bold text-4xl lg:text-6xl text-center lg:mx-4 cursor-pointer focus:ring-0 focus:outline-none whitespace-nowrap'>
-                    {title}
-                  </h3>
-                </a>
-              </Link>
-            </span>
-          ))}
-        </Slider>
+        <CategorySlider category={category} />
       </div>
       <motion.div
         className='grid grid-cols-1 lg:grid-cols-3 gap-14 mt-12'
@@ -127,4 +72,4 @@ const StoriesSection = ({ category = '' }) => {
   );
 };
 
-export default StoriesSection;
+export default Stories;

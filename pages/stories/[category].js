@@ -1,5 +1,5 @@
 import Layout from 'components/Layout';
-import StoriesSection from 'components/Stories/StoriesSection';
+import Stories from 'components/StoriesPage/Stories';
 import React from 'react';
 import { useRouter } from 'next/router';
 
@@ -9,7 +9,7 @@ const StoriesCategoryPage = () => {
 
   return (
     <Layout>
-      <StoriesSection category={category} />
+      <Stories category={category} />
     </Layout>
   );
 };
