@@ -4,7 +4,8 @@ import Navbar from 'components/Navbar';
 import Footer from 'components/Footer';
 
 const Layout = ({ meta, children }) => {
-  const pageTitle = meta && meta.title ? `${title} | DoubleEng` : 'DoubleEng';
+  const pageTitle =
+    meta && meta.title ? `${meta.title} | DoubleEng` : 'DoubleEng';
   const pageDescription =
     meta && meta.description
       ? meta.description
