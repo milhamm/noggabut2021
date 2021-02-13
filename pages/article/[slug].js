@@ -4,11 +4,18 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import fetcher from 'lib/fetcher';
 import { useStore } from 'lib/zustandProvider';
+import { useRouter } from 'next/router';
 
 const ArticlePage = ({ post }) => {
+  const router = useRouter();
+
   const { category } = useStore((store) => ({
     category: store.category,
   }));
+
+  if (router.isFallback) {
+    return <div>Loading . . .</div>;
+  }
 
   return (
     <Layout>
