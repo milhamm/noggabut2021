@@ -40,7 +40,7 @@ const Stories = ({ category = '', posts = [] }) => {
                 category={Tags}
                 slug={slug}
                 image={thumbnail}
-                author={author.name}
+                author={author}
               />
             </motion.div>
           ))}

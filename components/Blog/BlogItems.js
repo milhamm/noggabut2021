@@ -29,7 +29,9 @@ const BlogItems = ({ title, category, image, author, id, slug }) => {
           </motion.h4>
         </a>
       </Link>
-      <p className='text-gray-500 text-sm lg:text-lg'>{`By ${author}`}</p>
+      <a href={`mailto:${author.email}`}>
+        <p className='text-gray-500 text-sm lg:text-lg'>{`By ${author.name}`}</p>
+      </a>
     </div>
   );
 };

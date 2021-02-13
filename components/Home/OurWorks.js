@@ -22,17 +22,20 @@ const OurWorks = () => {
             and get 1st place in the hackathon competition Devday RPLGDC Telkom
             University
           </p>
-          <div className='grid grid-cols-2 mt-6 mb-12 gap-1'>
-            <div>
+          <div className='grid grid-cols-1 lg:grid-cols-2 mt-6 mb-12 gap-1'>
+            <div className='mb-8'>
               <div className='text-sm'>Scope: Hackathon, Health</div>
             </div>
             <div>
               <div className='text-sm mb-4'>Other Creators</div>
-              <img
-                src='/images/logo.jpg'
-                alt=''
-                className='w-10 h-10 rounded-full'
-              />
+              <div className='flex items-center'>
+                <img
+                  src='/images/logo.jpg'
+                  alt=''
+                  className='w-10 h-10 rounded-full mr-4'
+                />
+                <p>Ditya Athallah</p>
+              </div>
             </div>
           </div>
         </div>

@@ -21,7 +21,7 @@ const LatestReleases = () => {
           category={data.data[0].Tags}
           slug={data.data[0].slug}
           image={data.data[0].thumbnail}
-          author={data.data[0].author.name}
+          author={data.data[0].author}
         />
         <BlogItems
           id={`${data.data[1].slug}-home`}
@@ -29,7 +29,7 @@ const LatestReleases = () => {
           category={data.data[1].Tags}
           image={data.data[1].thumbnail}
           slug={data.data[1].slug}
-          author={data.data[1].author.name}
+          author={data.data[1].author}
         />
       </div>
 
