@@ -29,7 +29,7 @@ const sliderSettings = {
         focusOnSelect: true,
         speed: 0,
         swipe: false,
-        centerPadding: '128px',
+        centerPadding: '48px',
         arrows: false,
         dots: false,
       },
@@ -51,7 +51,7 @@ const CategorySlider = ({ category }) => {
         <span className='focus: outline-none py-3' key={title}>
           <Link href={`/stories/${url}`}>
             <a>
-              <h3 className='font-bold text-3xl lg:text-4xl text-center lg:mx-4 cursor-pointer focus:ring-0 focus:outline-none whitespace-nowrap'>
+              <h3 className='font-bold text-3xl lg:text-5xl text-center lg:mx-4 cursor-pointer focus:ring-0 focus:outline-none whitespace-nowrap'>
                 {title}
               </h3>
             </a>

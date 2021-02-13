@@ -68,7 +68,7 @@ export async function getStaticPaths() {
 export async function getStaticProps({ params }) {
   const res = await fetcher(`/article/${params.slug}`);
   const post = res.data;
-  return { props: { post } };
+  return { props: { post }, revalidate: 1 };
 }
 
 export default ArticlePage;

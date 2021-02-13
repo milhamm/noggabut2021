@@ -41,7 +41,10 @@ const Navbar = () => {
           </Link>
         </motion.span>
 
-        <motion.span className='cursor-pointer mx-8' variants={listItem}>
+        <motion.span
+          className='cursor-pointer mx-3 lg:mx-8'
+          variants={listItem}
+        >
           <Link href='/about-us'>
             <a>About Us</a>
           </Link>
