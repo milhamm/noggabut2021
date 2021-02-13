@@ -4,9 +4,8 @@ import Link from 'next/link';
 
 const categories = [
   { title: 'All Stories', url: '' },
-  { title: 'Backend', url: 'backend' },
+  { title: 'Project', url: 'project' },
   { title: 'Experience', url: 'experience' },
-  { title: 'Frontend', url: 'frontend' },
 ];
 
 const sliderSettings = {
