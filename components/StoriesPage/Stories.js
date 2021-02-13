@@ -18,7 +18,7 @@ const listItem = {
   show: { opacity: 1, y: 0 },
 };
 
-const Stories = ({ category = '' }) => {
+const Stories = ({ category = '', posts = [] }) => {
   return (
     <div className='container mx-auto mb-32 px-6'>
       <div className='text-center font-bold text-3xl lg:text-5xl'>Stories</div>
@@ -31,42 +31,18 @@ const Stories = ({ category = '' }) => {
         initial='hidden'
         animate='show'
       >
-        <motion.div variants={listItem}>
-          <BlogItems
-            id='1'
-            title='Proclub Experience'
-            category='Backend'
-            image='/images/tes1.jpg'
-            author='Muhammad Avtara Khrisna'
-          />
-        </motion.div>
-        <motion.div variants={listItem}>
-          <BlogItems
-            id='2'
-            title='Designing Data Science Tools at Spotify'
-            category='Backend'
-            image='/images/tes1.jpg'
-            author='Muhammad Avtara Khrisna'
-          />
-        </motion.div>
-        <motion.div variants={listItem}>
-          <BlogItems
-            id='3'
-            title='Designing Data Science Tools at Spotify'
-            category='Backend'
-            image='/images/tes1.jpg'
-            author='Muhammad Avtara Khrisna'
-          />
-        </motion.div>
-        <motion.div variants={listItem}>
-          <BlogItems
-            id='4'
-            title='Designing Data Science Tools at Spotify'
-            category='Backend'
-            image='/images/tes1.jpg'
-            author='Muhammad Avtara Khrisna'
-          />
-        </motion.div>
+        {posts.data &&
+          posts.data.map(({ slug, title, thumbnail, author, Tags }) => (
+            <motion.div variants={listItem}>
+              <BlogItems
+                id={slug}
+                title={title}
+                category={Tags}
+                image={thumbnail}
+                author={author.name}
+              />
+            </motion.div>
+          ))}
       </motion.div>
     </div>
   );

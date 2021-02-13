@@ -5,7 +5,7 @@ const Hero = () => {
   return (
     <div className='container px-6 mx-auto flex justify-center flex-col h-32 lg:h-96 mb-32 mt-24 lg:mt-0'>
       <motion.h1
-        className='font-bold text-4xl lg:text-5xl leading-loose'
+        className='font-bold text-4xl lg:text-5xl leading-loose mb-8'
         initial={{ y: 10, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.7 }}

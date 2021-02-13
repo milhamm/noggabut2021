@@ -10,14 +10,14 @@ const LatestReleases = () => {
         <BlogItems
           id='1-home'
           title='Designing Data Science Tools at Spotify'
-          category='Backend'
+          // category='Backend'
           image='/images/tes1.jpg'
           author='Muhammad Avtara Khrisna'
         />
         <BlogItems
           id='2-home'
           title='Proclub Experience'
-          category='Backend'
+          // category='Backend'
           image='/images/tes1.jpg'
           author='Muhammad Avtara Khrisna'
         />

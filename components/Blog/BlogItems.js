@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import Label from './Label';
 import Link from 'next/link';
 
-const BlogItems = ({ title, category, image, author, id }) => {
+const BlogItems = ({ title, category = ['hahay'], image, author, id }) => {
   return (
     <div className='item'>
       <motion.div
@@ -16,8 +16,8 @@ const BlogItems = ({ title, category, image, author, id }) => {
           className='min-w-full min-h-full absolute object-cover transform hover:scale-125 transition-transform'
         />
       </motion.div>
-      <Label text={category} />
-      <Link href='/article/designing-anu'>
+      {category && category.map((tag) => <Label text={tag} />)}
+      <Link href={`/article/${id}`}>
         <a>
           <motion.h4
             className='text-lg lg:text-2xl font-medium mt-4 hover:underline cursor-pointer'
