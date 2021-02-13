@@ -9,16 +9,22 @@ import { useRouter } from 'next/router';
 const ArticlePage = ({ post }) => {
   const router = useRouter();
 
-  const { category } = useStore((store) => ({
-    category: store.category,
-  }));
-
   if (router.isFallback) {
     return <div>Loading . . .</div>;
   }
 
+  const { category } = useStore((store) => ({
+    category: store.category,
+  }));
+
+  const meta = {
+    title: post.title,
+    description: `A story by ${post.author.name}`,
+    image: post.thumbnail,
+  };
+
   return (
-    <Layout>
+    <Layout meta={meta}>
       <div className='container mx-auto px-6 mb-32'>
         <motion.div
           className='relative w-full overflow-hidden h-52 lg:h-96 mb-8 lg:mb-20 rounded'

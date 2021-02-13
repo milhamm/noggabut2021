@@ -6,6 +6,8 @@ const categories = [
   { title: 'All Stories', url: '' },
   { title: 'Project', url: 'project' },
   { title: 'Experience', url: 'experience' },
+  { title: 'Project', url: 'project' },
+  { title: 'Experience', url: 'experience' },
 ];
 
 const sliderSettings = {
