@@ -1,9 +1,12 @@
 import Head from 'next/head';
 import { AnimateSharedLayout } from 'framer-motion';
+import { useHydrate } from 'lib/store';
 
 import '../styles/globals.css';
+import { StoreProvider } from 'lib/zustandProvider';
 
 function MyApp({ Component, pageProps }) {
+  const store = useHydrate(pageProps.initialZustandState);
   return (
     <>
       <Head>
@@ -24,9 +27,11 @@ function MyApp({ Component, pageProps }) {
           href='https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css'
         />
       </Head>
-      <AnimateSharedLayout>
-        <Component {...pageProps} />
-      </AnimateSharedLayout>
+      <StoreProvider store={store}>
+        <AnimateSharedLayout>
+          <Component {...pageProps} />
+        </AnimateSharedLayout>
+      </StoreProvider>
     </>
   );
 }

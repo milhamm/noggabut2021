@@ -33,11 +33,12 @@ const Stories = ({ category = '', posts = [] }) => {
       >
         {posts.data &&
           posts.data.map(({ slug, title, thumbnail, author, Tags }) => (
-            <motion.div variants={listItem}>
+            <motion.div variants={listItem} key={slug}>
               <BlogItems
-                id={slug}
+                id={`${slug}-${category}`}
                 title={title}
                 category={Tags}
+                slug={slug}
                 image={thumbnail}
                 author={author.name}
               />
