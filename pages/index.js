@@ -17,3 +17,13 @@ export default function Home() {
     </Layout>
   );
 }
+
+export async function getStaticProps() {
+  return {
+    props: {
+      initialZustandState: {
+        category: 'home',
+      },
+    },
+  };
+}

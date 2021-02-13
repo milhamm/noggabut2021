@@ -2,15 +2,9 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import Label from './Label';
 import Link from 'next/link';
+import { capitalize } from 'utils/capitalize';
 
-const BlogItems = ({
-  title,
-  category = ['hahay'],
-  image,
-  author,
-  id,
-  slug,
-}) => {
+const BlogItems = ({ title, category, image, author, id, slug }) => {
   return (
     <div className='item'>
       <motion.div
@@ -31,7 +25,7 @@ const BlogItems = ({
             className='text-lg lg:text-2xl font-medium mt-4 hover:underline cursor-pointer'
             layoutId={`title-${id}`}
           >
-            {title}
+            {capitalize(title)}
           </motion.h4>
         </a>
       </Link>

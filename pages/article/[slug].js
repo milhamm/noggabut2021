@@ -32,6 +32,7 @@ const ArticlePage = ({ post }) => {
           </motion.h4>
           {post.Tags.map((tag) => (
             <Label
+              key={tag}
               text={tag}
               link={tag}
               initial={{ y: 10, opacity: 0 }}
@@ -62,7 +63,7 @@ export async function getStaticPaths() {
     params: { slug: post.slug },
   }));
 
-  return { paths, fallback: false };
+  return { paths, fallback: true };
 }
 
 export async function getStaticProps({ params }) {

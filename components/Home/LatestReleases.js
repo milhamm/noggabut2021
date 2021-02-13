@@ -1,25 +1,35 @@
 import BlogItems from 'components/Blog/BlogItems';
+import fetcher from 'lib/fetcher';
 import Link from 'next/link';
 import React from 'react';
+import useSWR from 'swr';
 import HomeSections from './HomeSections';
 
 const LatestReleases = () => {
+  const { data } = useSWR('/stories/', fetcher);
+
+  if (!data) {
+    return <div>Loading . . .</div>;
+  }
+
   return (
     <HomeSections title='New Releases' outlineTitle='New Releases'>
       <div className='grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-24'>
         <BlogItems
-          id='1-home'
-          title='Designing Data Science Tools at Spotify'
-          // category='Backend'
-          image='/images/tes1.jpg'
-          author='Muhammad Avtara Khrisna'
+          id={`${data.data[0].slug}-home`}
+          title={data.data[0].title}
+          category={data.data[0].Tags}
+          slug={data.data[0].slug}
+          image={data.data[0].thumbnail}
+          author={data.data[0].author.name}
         />
         <BlogItems
-          id='2-home'
-          title='Proclub Experience'
-          // category='Backend'
-          image='/images/tes1.jpg'
-          author='Muhammad Avtara Khrisna'
+          id={`${data.data[1].slug}-home`}
+          title={data.data[1].title}
+          category={data.data[1].Tags}
+          image={data.data[1].thumbnail}
+          slug={data.data[1].slug}
+          author={data.data[1].author.name}
         />
       </div>
 
