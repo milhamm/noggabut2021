@@ -1,17 +1,28 @@
 import TextInput from 'components/Form/TextInput';
 import Layout from 'components/Layout';
 import api from 'lib/api';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 
 const ContactUsPage = () => {
   const [message, setMessage] = useState(null);
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { isSubmitSuccessful },
+  } = useForm();
 
-  const { register, handleSubmit } = useForm();
   const onSubmit = async (data) => {
     const response = await api.post('/contact/', data);
     setMessage(response.data.message);
   };
+
+  useEffect(() => {
+    if (isSubmitSuccessful) {
+      reset();
+    }
+  }, [isSubmitSuccessful, reset]);
 
   return (
     <Layout>
