@@ -1,11 +1,17 @@
 import TextInput from 'components/Form/TextInput';
 import Layout from 'components/Layout';
-import React from 'react';
+import api from 'lib/api';
+import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 
 const ContactUsPage = () => {
+  const [message, setMessage] = useState(null);
+
   const { register, handleSubmit } = useForm();
-  const onSubmit = (data) => console.log(data);
+  const onSubmit = async (data) => {
+    const response = await api.post('/contact/', data);
+    setMessage(response.data.message);
+  };
 
   return (
     <Layout>
@@ -24,15 +30,13 @@ const ContactUsPage = () => {
           </div>
           <div>
             <form onSubmit={handleSubmit(onSubmit)}>
-              {false && (
+              {message && (
                 <div
                   className={`${
-                    false ? 'bg-green-500' : 'bg-red-500'
+                    message ? 'bg-green-500' : 'bg-red-500'
                   } mb-8 px-6 py-3 text-white rounded`}
                 >
-                  {false
-                    ? 'Your Message has been delivered, thank you'
-                    : 'Oops Something wrong'}
+                  {message ? message : 'Oops Something wrong'}
                 </div>
               )}
 

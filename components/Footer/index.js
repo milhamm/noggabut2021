@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 
 const Footer = () => {
   return (
@@ -12,7 +13,9 @@ const Footer = () => {
           experience, we are a perfect match.
         </div>
         <strong className='text-2xl lg:text-4xl font-bold underline cursor-pointer mt-6 block text-blue-500'>
-          Let’s make your dream app
+          <Link href='/contact-us'>
+            <a>Let’s make your dream app</a>
+          </Link>
         </strong>
       </div>
       <div className='bg-black mt-24'>
